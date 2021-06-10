@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<input type="radio" name="chk" id="chkyes" onclick="showhidediv()">10th
+	<input type="radio" name="chk" id="chkno" onclick="showhidediv()">mains
+	<br>
+	<div id="divtext" style="display: none;">
+		Number:
+	<input type="text" id="txtBox">
+    </div>
+
+
+
+	<script>
+		function showhidediv(){
+			// var chkno = document.getElementById("chkno");
+			var chkyes = document.getElementById("chkyes");
+			var divtext = document.getElementById("divtext");
+			divtext.style.display = chkyes.checked ? "block" : none;
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Validation Form</title>
+</head>
+<body>
+	<form action="#" onsubmit="return validation()">
+		Username:
+		<input type="text" name="" id="user">
+		<span id="username" style="color: red;"></span>
+		<br><br>
+		Email:
+		<input type="email" name="" id="email">
+		<span id="mail" style="color: red;"></span>
+		<br><br>
+		Password:
+		<input type="text" name="" id="pass">
+		<span id="password" style="color: red;"></span>
+		<br><br>
+		Confirm Password:
+		<input type="text" name="" id="confirm">
+		<span id="confirmpass" style="color: red;">
+		</span>
+		<br><br>
+		Phone:
+		<input type="text" name="" id="phone">
+		<span id="mobile" style="color: red;"></span>
+		<br><br>
+		<button type="submit">submit</button>
+	</form>
+
+	<script>
+		// yahan get kiya h
+		function validation() {
+			var user = document.getElementById('user').value;
+			var email = document.getElementById('email').value;
+			var pass = document.getElementById('pass').value;
+			var confirm =document.getElementById('confirm').value; 
+			var phone = document.getElementById('phone').value; 
+			  
+
+
+        // yahan set kiya h
+			if (user=="") {
+				document.getElementById('username').innerHTML="**Username Field can't be Empty";
+				    return false;
+			} 
+			if((user.length <= 2) || (user.length > 20)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+				return false;	
+			}
+			if ((!isNaN(user))) {
+				document.getElementById('username').innerHTML ="**Username must be character";
+				return false;
+			}
+			if (email == "") {
+				document.getElementById('mail').innerHTML="**Please Fill Email Field";
+				return false;
+			}
+			if (pass=="") {
+				document.getElementById('password').innerHTML="**Password Field can't be Empty";
+				return false;
+			} 
+			if((pass.length <= 2) || (pass.length > 20)) {
+				document.getElementById('password').innerHTML =" ** Password lenght must be between 2 and 20";
+				return false;	
+			}
+			if (pass!=confirm) {
+				document.getElementById('confirmpass').innerHTML =" ** Password is not matching";
+				return false;
+			}
+			if (phone == "") {
+				document.getElementById('mobile').innerHTML="**Please Fill the field";
+				return false; 
+			}
+			if (phone.length != 10) {
+				document.getElementById('mobile').innerHTML="**Phone Length must be 10";
+				return false; 
+			}
+			if (isNaN(phone)) {
+				document.getElementById('mobile').innerHTML ="**Phone must have Numbers";
+				return false; 
+			}
+		}
+	</script>
+
+</body>
+</html>
